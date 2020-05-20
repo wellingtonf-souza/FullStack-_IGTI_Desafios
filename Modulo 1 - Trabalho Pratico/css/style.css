@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Ubuntu&display=swap");
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+
+#table_princ {
+  display: flex;
+  justify-content: center;
+}
+
+#quadrado_colorido {
+  margin: 0 auto;
+  /*box-shadow: 0 8px 6px -6px black;*/
+}

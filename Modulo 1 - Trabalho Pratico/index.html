@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Trabalho Prático do Módulo 1</title>
+  </head>
+  <body>
+    <form>
+      <table id="table_princ">
+        <tr>
+          <td>(R) Vermelo:</td>
+          <td><input type="range" min="0" max="255" id="R" /></td>
+          <td>
+            <input
+              type="text"
+              id="text_R"
+              disabled="True"
+              style="height: 20px; width: 80px; text-align: center;"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>(G) Verde:</td>
+          <td><input type="range" min="0" max="255" id="G" /></td>
+          <td>
+            <input
+              type="text"
+              id="text_G"
+              disabled="True"
+              style="height: 20px; width: 80px; text-align: center;"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>(B) Azul:</td>
+          <td><input type="range" min="0" max="255" id="B" /></td>
+          <td>
+            <input
+              type="text"
+              id="text_B"
+              disabled="True"
+              style="height: 20px; width: 80px; text-align: center;"
+            />
+          </td>
+        </tr>
+      </table>
+      <div id="quadrado_colorido" style="width: 100px; height: 100px;"></div>
+    </form>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
