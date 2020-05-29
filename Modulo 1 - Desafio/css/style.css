@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+}
+
+.tabsPrincipal {
+  padding: 15px; /* distancia das bordas do texto interno */
+  border: 1px solid grey;
+  border-radius: 03px; /* curvando a borda */
+  margin-right: 00px; /* separando as caixas*/
+  margin: 0 auto;
+}
+
+#divBusca {
+  display: flex;
+  margin: 80px;
+}
+
+img {
+  border-radius: 50%;
+}
+
+.person-flex {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: space-between;
+}
