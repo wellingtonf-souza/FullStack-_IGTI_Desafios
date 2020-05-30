@@ -6,7 +6,7 @@ Criar uma aplicação para filtrar usuários e mostrar estatísticas a partir do
 
 Os alunos deverão desempenhar as seguintes atividades:
 
-- [x] Na carga inicial da aplicação, obter os dados de: https://randomuser.me/api/?seed=javascript&results=100&nat=BR&noinfo (Links para um site externo.)
+- [x] Na carga inicial da aplicação, obter os dados de: https://randomuser.me/api/?seed=javascript&results=100&nat=BR&noinfo.
 
 - [x] Carregar os dados dos usuários em um array.
 
@@ -14,10 +14,10 @@ Os alunos deverão desempenhar as seguintes atividades:
 
 - [x] O usuário poderá filtrar dados quando digitar pelo menos um caractere no input.
 
-- [x] O usuário poderá filtrar os dados tanto digitando "Enter" quanto clicando no botão correspondente, conforme imagens mais abaixo.
+- [x] O usuário poderá filtrar os dados tanto digitando "Enter" quanto clicando no botão correspondente.
 
 - [x] Montar dois painéis.
 
 - [x] No painel da esquerda, listar os usuários filtrados.
 
-- [x] No painel da direita, calcular e mostrar algumas estatísticas sobre esses usuários, conforme imagens abaixo.
+- [x] No painel da direita, calcular e mostrar algumas estatísticas sobre esses usuários.

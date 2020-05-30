@@ -44,7 +44,6 @@ function eventFilterKey(event) {
       allusuariosfilter = null;
       tabUsuarios.innerHTML = "<h5>Nenhum usuário filtrado</h5>";
       tabEstatisticas.innerHTML = " <h5>Nada a ser exibido</h5>";
-      return allusuariosfilter;
     } else {
       allusuariosfilter = allusuarios.filter((usuario) => {
         return usuario.name
@@ -55,8 +54,6 @@ function eventFilterKey(event) {
         allusuariosfilter = null;
         tabUsuarios.innerHTML = "<h5>Nenhum usuário filtrado</h5>";
         tabEstatisticas.innerHTML = " <h5>Nada a ser exibido</h5>";
-
-        return allusuariosfilter;
       } else {
         createtabUsuarios(allusuariosfilter);
         createtabEstatisticas(allusuariosfilter);
@@ -70,7 +67,6 @@ function eventFilterClick() {
     allusuariosfilter = null;
     tabUsuarios.innerHTML = "<h5>Nenhum usuário filtrado</h5>";
     tabEstatisticas.innerHTML = " <h5>Nada a ser exibido</h5>";
-    return allusuariosfilter;
   } else {
     allusuariosfilter = allusuarios.filter((usuario) => {
       return usuario.name.toLowerCase().includes(inputText.value.toLowerCase());
@@ -79,7 +75,6 @@ function eventFilterClick() {
       allusuariosfilter = null;
       tabUsuarios.innerHTML = "<h5>Nenhum usuário filtrado</h5>";
       tabEstatisticas.innerHTML = " <h5>Nada a ser exibido</h5>";
-      return allusuariosfilter;
     } else {
       createtabUsuarios(allusuariosfilter);
       createtabEstatisticas(allusuariosfilter);
