@@ -1,0 +1,27 @@
+.div_Othervalues {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.InputPrincipal {
+  padding: 20px;
+}
+
+.INSS {
+  color: #e67e22;
+}
+
+.IRPF {
+  color: #c0392b;
+}
+
+.netSalary {
+  color: #16a085;
+}
+
+.Base {
+  font-weight: bolder;
+}
