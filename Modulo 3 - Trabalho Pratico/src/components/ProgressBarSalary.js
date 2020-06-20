@@ -2,7 +2,7 @@ import { calculateSalaryFrom } from "../helpers/salary.js";
 import { percentBase, value_and_percent } from "../helpers/percentBase";
 import React, { Component } from "react";
 import Bar from "./Bar.js";
-import css from "./css/bars.module.css";
+import css from "./css/style.module.css";
 import ScrewThread from "./Doughnut.js";
 
 export default class ProgressBarSalary extends Component {

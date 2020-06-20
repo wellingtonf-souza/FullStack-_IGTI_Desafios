@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Doughnut } from "react-chartjs-2";
-import css from "./css/graph.module.css";
+import css from "./css/style.module.css";
 
 export default class ScrewThread extends Component {
   render() {

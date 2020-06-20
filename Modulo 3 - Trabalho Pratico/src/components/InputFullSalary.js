@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import InputReadOnly from "./InputReadOnly.js";
 import ProgressBarSalary from "./ProgressBarSalary.js";
-import css from "./css/readOnly.module.css";
+import css from "./css/style.module.css";
 
 export default class InputFullSalary extends Component {
   constructor() {

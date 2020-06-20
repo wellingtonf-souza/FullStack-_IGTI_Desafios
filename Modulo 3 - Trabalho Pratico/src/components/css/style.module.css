@@ -25,3 +25,12 @@
 .Base {
   font-weight: bolder;
 }
+
+.Bars {
+  display: flex;
+  padding: 20px;
+}
+
+.div_graph {
+  height: 300px;
+}

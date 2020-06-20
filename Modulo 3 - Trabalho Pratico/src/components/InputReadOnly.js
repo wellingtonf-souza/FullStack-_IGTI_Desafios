@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { calculateSalaryFrom } from "../helpers/salary.js";
 import { percentBase, value_and_percent } from "../helpers/percentBase";
 import { formatReal } from "../helpers/formatReal";
-import css from "./css/readOnly.module.css";
+import css from "./css/style.module.css";
 
 export default class InputReadOnly extends Component {
   render() {
