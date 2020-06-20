@@ -3,6 +3,7 @@ import { percentBase, value_and_percent } from "../helpers/percentBase";
 import React, { Component } from "react";
 import Bar from "./Bar.js";
 import css from "./css/bars.module.css";
+import ScrewThread from "./Doughnut.js";
 
 export default class ProgressBarSalary extends Component {
   render() {
@@ -19,11 +20,12 @@ export default class ProgressBarSalary extends Component {
 
     return (
       <div>
-        <div className={css.Bars}>
+        {/* <div className={css.Bars}>
           <Bar value={INSS} color={"#e67e22"} />
           <Bar value={IRPF} color={"#c0392b"} />
           <Bar value={liquid} color={"#16a085"} />
-        </div>
+        </div> */}
+        <ScrewThread INSS={INSS} IRPF={IRPF} liquid={liquid} />
       </div>
     );
   }
