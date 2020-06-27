@@ -1,0 +1,51 @@
+.InstallmentsDivInside {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+  width: 150px;
+}
+.InstallmentsDivOut {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 25px;
+}
+.Form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px;
+}
+
+.FormOut {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.idStyle {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.goodPercent {
+  color: mediumturquoise;
+}
+
+.badPercent {
+  color: salmon;
+}
+
+.goodReal {
+  color: lime;
+}
+
+.badReal {
+  color: crimson;
+}
