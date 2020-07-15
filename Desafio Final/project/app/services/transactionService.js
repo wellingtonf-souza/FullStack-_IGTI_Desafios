@@ -67,4 +67,21 @@ const remove = async (req, res) => {
   }
 };
 
-module.exports = { findAll, create, update, remove };
+const filterByDescription = async (req, res) => {
+  const { description, period } = req.body;
+  var condition = description
+    ? {
+        description: { $regex: new RegExp(description), $options: "i" },
+        yearMonth: period,
+      }
+    : { yearMonth: period };
+
+  try {
+    const data = await TransactionModel.find(condition);
+    res.send(data);
+  } catch (error) {
+    res.send("Erro: " + err.mensage);
+  }
+};
+
+module.exports = { findAll, create, update, remove, filterByDescription };
