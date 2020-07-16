@@ -1,0 +1,13 @@
+.DatePickerSelectPeriod {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid lightgray; */
+  border-radius: 5px;
+  /* margin: 0 auto; */
+}
+
+.DatePickerSelectPeriodInput {
+  text-align: center;
+}
