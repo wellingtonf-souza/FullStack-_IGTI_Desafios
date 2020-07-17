@@ -11,3 +11,11 @@
 .DatePickerSelectPeriodInput {
   text-align: center;
 }
+
+.Summary {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 250px;
+  margin-right: 250px;
+}
