@@ -68,7 +68,7 @@ const remove = async (req, res) => {
 };
 
 const filterByDescription = async (req, res) => {
-  const { description, period } = req.body;
+  const { description, period } = req.query;
   var condition = description
     ? {
         description: { $regex: new RegExp(description), $options: "i" },

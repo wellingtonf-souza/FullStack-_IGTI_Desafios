@@ -12,6 +12,7 @@ export default function App() {
   const [startDate, setStartDate] = useState(new Date());
   const [period, setPeriod] = useState(startDate.toISOString().substring(0, 7));
   const [selectedRegistros, setSelectedRegistros] = useState([]);
+  const [useFilter, setUseFilter] = useState("");
   const minDate = new Date(2018, 11, 31);
   const maxDate = new Date(2021, 11, 31);
   const handleDate = (date) => {
@@ -26,6 +27,19 @@ export default function App() {
     };
     getRegistros();
   }, [period]);
+
+  const handleChangeFilter = async (newText) => {
+    if (newText.length === 0) {
+      setUseFilter(newText);
+      const registros = await api.findAll(period);
+      setSelectedRegistros(registros);
+    } else {
+      setUseFilter(newText);
+      const registros = await api.filterByDescription(period, useFilter);
+      setSelectedRegistros(registros);
+    }
+  };
+
   return (
     <div className={css.container}>
       <h3 className="center">Controle Financeiro Pessoal</h3>
@@ -45,7 +59,7 @@ export default function App() {
       </div>
       <div className={css.InsertFilter}>
         <InsertButton />
-        <DivFilter />
+        <DivFilter filter={useFilter} onChangeFilter={handleChangeFilter} />
       </div>
       <div>
         <ListRegistros registros={selectedRegistros} />

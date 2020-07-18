@@ -7,4 +7,15 @@ async function findAll(period) {
   return res.data;
 }
 
-export { findAll };
+async function filterByDescription(period, filter) {
+  const res = await axios.get(
+    `${API_URL}/filterByDescription/?period=${period}&description=${filter}`,
+    {
+      period: period,
+      description: filter,
+    }
+  );
+  return res.data;
+}
+
+export { findAll, filterByDescription };
