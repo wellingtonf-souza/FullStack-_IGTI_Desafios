@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import Summary from "./components/divSummary.js";
+import DivSummary from "./components/DivSummary.js";
 import css from "./css/style.module.css";
 import * as api from "./service/apiService.js";
+import DivFilter from "./components/DivFilter.js";
+import InsertButton from "./components/InsertButton.js";
+import ListRegistros from "./components/ListRegistros.js";
 
 export default function App() {
   const [startDate, setStartDate] = useState(new Date());
@@ -23,9 +26,8 @@ export default function App() {
     };
     getRegistros();
   }, [period]);
-
   return (
-    <div>
+    <div className={css.container}>
       <h3 className="center">Controle Financeiro Pessoal</h3>
       <div className={css.DatePickerSelectPeriod}>
         <DatePicker
@@ -39,7 +41,14 @@ export default function App() {
         />
       </div>
       <div>
-        <Summary inputRegistros={selectedRegistros} />
+        <DivSummary inputRegistros={selectedRegistros} />
+      </div>
+      <div className={css.InsertFilter}>
+        <InsertButton />
+        <DivFilter />
+      </div>
+      <div>
+        <ListRegistros registros={selectedRegistros} />
       </div>
     </div>
   );

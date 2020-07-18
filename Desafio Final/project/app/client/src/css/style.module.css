@@ -1,3 +1,33 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+/* adicionado para modificar a fonte dos textos utilizados */
+body,
+label,
+input,
+button,
+select,
+box,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+  margin: 50px auto;
+  font-size: 24px;
+  background-color: #373866;
+  max-width: 1500px;
+}
+
 .DatePickerSelectPeriod {
   display: flex;
   flex-direction: row;
@@ -18,4 +48,59 @@
   justify-content: space-between;
   margin-left: 250px;
   margin-right: 250px;
+  /* background-color: coral; */
+  padding: 5px;
+  border-radius: 5px;
 }
+
+.InsertFilter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 auto;
+  padding: 10px 0;
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+.TableRegistro {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  display: table;
+  border: 1px solid #ccc;
+}
+
+.TableRegistro tr {
+  border-bottom: 1px solid #ddd;
+}
+
+/* .TableRegistro tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+.TableRegistro tr:nth-child(even) {
+  background-color: #f1f1f1;
+} */
+
+.TableRegistro td,
+.TableRegistro th {
+  padding: 8px 8px;
+  display: table-cell;
+  text-align: left;
+  vertical-align: top;
+}
+
+.TableRegistro th:first-child,
+.TableRegistro td:first-child {
+  padding-left: 16px;
+}
+
+.TableRegistro {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.7);
+}
+/* .trRegistro {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+} */
