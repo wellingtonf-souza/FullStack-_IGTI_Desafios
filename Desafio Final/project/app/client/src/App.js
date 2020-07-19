@@ -22,22 +22,19 @@ export default function App() {
   };
   useEffect(() => {
     const getRegistros = async () => {
-      const registros = await api.findAll(period);
-      setSelectedRegistros(registros);
+      if (useFilter.length === 0) {
+        const registros = await api.findAll(period);
+        setSelectedRegistros(registros);
+      } else {
+        const registros = await api.filterByDescription(period, useFilter);
+        setSelectedRegistros(registros);
+      }
     };
     getRegistros();
-  }, [period]);
+  }, [period, useFilter]);
 
   const handleChangeFilter = async (newText) => {
-    if (newText.length === 0) {
-      setUseFilter(newText);
-      const registros = await api.findAll(period);
-      setSelectedRegistros(registros);
-    } else {
-      setUseFilter(newText);
-      const registros = await api.filterByDescription(period, useFilter);
-      setSelectedRegistros(registros);
-    }
+    setUseFilter(newText);
   };
 
   return (
