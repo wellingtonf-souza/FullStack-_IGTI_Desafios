@@ -13,6 +13,7 @@ export default function ListRegistros({ registros }) {
       <table className={`table ${css.TableRegistro}`}>
         <thead>
           <tr>
+            <th>Day</th>
             <th>Category and description</th>
             <th>Value</th>
             <th>Actions</th>
@@ -27,6 +28,7 @@ export default function ListRegistros({ registros }) {
                 className={css.trRegistro}
                 style={{ backgroundColor: colorRow }}
               >
+                <td>{registro.day}</td>
                 <td>
                   <div>
                     <div>
