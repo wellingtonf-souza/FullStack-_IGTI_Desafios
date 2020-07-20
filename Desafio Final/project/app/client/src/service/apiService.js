@@ -18,4 +18,9 @@ async function filterByDescription(period, filter) {
   return res.data;
 }
 
-export { findAll, filterByDescription };
+async function deleteById(id) {
+  const res = await axios.delete(`${API_URL}/remove/?id=${id}`);
+  return res.data;
+}
+
+export { findAll, filterByDescription, deleteById };

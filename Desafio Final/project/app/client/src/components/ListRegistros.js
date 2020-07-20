@@ -1,8 +1,14 @@
 import React from "react";
 import { formatReal } from "../helpers/helpers.js";
 import css from "../css/style.module.css";
+import Action from "./Action.js";
 
-export default function ListRegistros({ registros }) {
+export default function ListRegistros({ registros, onDelete, onPersist }) {
+  const handleActionClick = async ({ registro, type }) => {
+    if (type === "delete_forever") {
+      onDelete(registro);
+    }
+  };
   return (
     <div
       style={{
@@ -41,18 +47,16 @@ export default function ListRegistros({ registros }) {
                 </td>
                 <td>{formatReal(registro.value)}</td>
                 <td>
-                  <span
-                    className="material-icons"
-                    style={{ cursor: "pointer" }}
-                  >
-                    edit
-                  </span>
-                  <span
-                    className="material-icons"
-                    style={{ cursor: "pointer" }}
-                  >
-                    delete_forever
-                  </span>
+                  <Action
+                    registro={registro}
+                    type="edit"
+                    onActionClick={handleActionClick}
+                  />
+                  <Action
+                    registro={registro}
+                    type="delete_forever"
+                    onActionClick={handleActionClick}
+                  />
                 </td>
               </tr>
             );

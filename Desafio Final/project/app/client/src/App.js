@@ -36,6 +36,17 @@ export default function App() {
   const handleChangeFilter = async (newText) => {
     setUseFilter(newText);
   };
+  const handleDelete = async (registro) => {
+    const registroDeletado = await api.deleteById(registro._id);
+    if (useFilter.length === 0) {
+      const registros = await api.findAll(period);
+      setSelectedRegistros(registros);
+    } else {
+      const registros = await api.filterByDescription(period, useFilter);
+      setSelectedRegistros(registros);
+    }
+  };
+  const handlePersist = async () => {};
 
   return (
     <div className={css.container}>
@@ -59,7 +70,11 @@ export default function App() {
         <DivFilter filter={useFilter} onChangeFilter={handleChangeFilter} />
       </div>
       <div>
-        <ListRegistros registros={selectedRegistros} />
+        <ListRegistros
+          registros={selectedRegistros}
+          onDelete={handleDelete}
+          onPersist={handlePersist}
+        />
       </div>
     </div>
   );
