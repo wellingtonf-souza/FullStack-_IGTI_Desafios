@@ -59,7 +59,12 @@ export default function App() {
   //   setIsModalOpen(type);
   // };
 
-  const handleSave = async () => {};
+  const handleSave = async (newRegistro) => {
+    await api.create(newRegistro);
+    const { yearMonth } = newRegistro;
+    const registros = await api.findAll(yearMonth);
+    setSelectedRegistros(registros);
+  };
 
   return (
     <div className={css.container}>

@@ -23,4 +23,9 @@ async function deleteById(id) {
   return res.data;
 }
 
-export { findAll, filterByDescription, deleteById };
+async function create(body) {
+  const res = await axios.post(`${API_URL}/create/`, body);
+  return res.data;
+}
+
+export { findAll, filterByDescription, deleteById, create };

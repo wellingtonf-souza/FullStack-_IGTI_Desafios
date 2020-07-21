@@ -58,7 +58,7 @@ export default function ModalGradeNew({ onClose, onSave }) {
       yearMonthDay: yearMonthDay,
       type: type,
     };
-    console.log(newRegistro);
+    onSave(newRegistro);
     onClose(false);
   };
   return (
