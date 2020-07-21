@@ -59,6 +59,8 @@ export default function App() {
   //   setIsModalOpen(type);
   // };
 
+  const handleSave = async () => {};
+
   return (
     <div className={css.container}>
       <h3 className="center">Controle Financeiro Pessoal</h3>
@@ -87,7 +89,9 @@ export default function App() {
           onPersist={handlePersist}
         />
       </div>
-      {isModalOPen && <ModalGradeNew onClose={handlePersistNew} />}
+      {isModalOPen && (
+        <ModalGradeNew onClose={handlePersistNew} onSave={handleSave} />
+      )}
     </div>
   );
 }
