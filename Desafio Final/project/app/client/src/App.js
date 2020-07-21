@@ -7,12 +7,15 @@ import * as api from "./service/apiService.js";
 import DivFilter from "./components/DivFilter.js";
 import InsertButton from "./components/InsertButton.js";
 import ListRegistros from "./components/ListRegistros.js";
+import ModalGradeNew from "./components/ModalGradeNew.js";
 
 export default function App() {
   const [startDate, setStartDate] = useState(new Date());
   const [period, setPeriod] = useState(startDate.toISOString().substring(0, 7));
   const [selectedRegistros, setSelectedRegistros] = useState([]);
   const [useFilter, setUseFilter] = useState("");
+  const [isModalOPen, setIsModalOpen] = useState(false);
+
   const minDate = new Date(2018, 11, 31);
   const maxDate = new Date(2021, 11, 31);
   const handleDate = (date) => {
@@ -48,6 +51,14 @@ export default function App() {
   };
   const handlePersist = async () => {};
 
+  const handlePersistNew = async (type) => {
+    setIsModalOpen(type);
+  };
+
+  // const handleClose = async (type) => {
+  //   setIsModalOpen(type);
+  // };
+
   return (
     <div className={css.container}>
       <h3 className="center">Controle Financeiro Pessoal</h3>
@@ -66,7 +77,7 @@ export default function App() {
         <DivSummary inputRegistros={selectedRegistros} />
       </div>
       <div className={css.InsertFilter}>
-        <InsertButton />
+        <InsertButton onPersist={handlePersistNew} />
         <DivFilter filter={useFilter} onChangeFilter={handleChangeFilter} />
       </div>
       <div>
@@ -76,6 +87,7 @@ export default function App() {
           onPersist={handlePersist}
         />
       </div>
+      {isModalOPen && <ModalGradeNew onClose={handlePersistNew} />}
     </div>
   );
 }
