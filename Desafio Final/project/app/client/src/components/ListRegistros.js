@@ -7,6 +7,8 @@ export default function ListRegistros({ registros, onDelete, onPersist }) {
   const handleActionClick = async ({ registro, type }) => {
     if (type === "delete_forever") {
       onDelete(registro);
+    } else {
+      onPersist(registro);
     }
   };
   return (

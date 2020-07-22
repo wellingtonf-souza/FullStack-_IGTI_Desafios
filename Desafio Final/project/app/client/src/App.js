@@ -8,6 +8,7 @@ import DivFilter from "./components/DivFilter.js";
 import InsertButton from "./components/InsertButton.js";
 import ListRegistros from "./components/ListRegistros.js";
 import ModalGradeNew from "./components/ModalGradeNew.js";
+import ModalGradeEdit from "./components/ModalGradeEdit.js";
 
 export default function App() {
   const [startDate, setStartDate] = useState(new Date());
@@ -15,6 +16,8 @@ export default function App() {
   const [selectedRegistros, setSelectedRegistros] = useState([]);
   const [useFilter, setUseFilter] = useState("");
   const [isModalOPen, setIsModalOpen] = useState(false);
+  const [isModalEditOPen, setIsModalEditOpen] = useState(false);
+  const [RegistroEdit, setRegistroEdit] = useState({});
 
   const minDate = new Date(2018, 11, 31);
   const maxDate = new Date(2021, 11, 31);
@@ -49,17 +52,27 @@ export default function App() {
       setSelectedRegistros(registros);
     }
   };
-  const handlePersist = async () => {};
+  const handlePersistEdit = async (registro) => {
+    setRegistroEdit(registro);
+    setIsModalEditOpen(true);
+  };
+
+  const handleCloseEdit = async () => {
+    setIsModalEditOpen(false);
+  };
+
+  const handleSaveEdit = async (newRegistro) => {
+    await api.update(newRegistro);
+    const { yearMonth } = newRegistro;
+    const registros = await api.findAll(yearMonth);
+    setSelectedRegistros(registros);
+  };
 
   const handlePersistNew = async (type) => {
     setIsModalOpen(type);
   };
 
-  // const handleClose = async (type) => {
-  //   setIsModalOpen(type);
-  // };
-
-  const handleSave = async (newRegistro) => {
+  const handleSaveNew = async (newRegistro) => {
     await api.create(newRegistro);
     const { yearMonth } = newRegistro;
     const registros = await api.findAll(yearMonth);
@@ -91,11 +104,18 @@ export default function App() {
         <ListRegistros
           registros={selectedRegistros}
           onDelete={handleDelete}
-          onPersist={handlePersist}
+          onPersist={handlePersistEdit}
         />
       </div>
       {isModalOPen && (
-        <ModalGradeNew onClose={handlePersistNew} onSave={handleSave} />
+        <ModalGradeNew onClose={handlePersistNew} onSave={handleSaveNew} />
+      )}
+      {isModalEditOPen && (
+        <ModalGradeEdit
+          onClose={handleCloseEdit}
+          onSave={handleSaveEdit}
+          Registro={RegistroEdit}
+        />
       )}
     </div>
   );

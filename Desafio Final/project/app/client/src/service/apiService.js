@@ -28,4 +28,10 @@ async function create(body) {
   return res.data;
 }
 
-export { findAll, filterByDescription, deleteById, create };
+async function update(body) {
+  const id = body._id;
+  const res = await axios.put(`${API_URL}/update/?id=${id}`, body);
+  return res.data;
+}
+
+export { findAll, filterByDescription, deleteById, create, update };
