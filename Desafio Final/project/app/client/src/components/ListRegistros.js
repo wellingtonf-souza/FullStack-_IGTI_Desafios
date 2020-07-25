@@ -28,41 +28,46 @@ export default function ListRegistros({ registros, onDelete, onPersist }) {
           </tr>
         </thead>
         <tbody>
-          {registros.map((registro) => {
-            const colorRow = registro.type === "+" ? "#65B051" : "salmon";
-            return (
-              <tr
-                key={registro._id}
-                className={css.trRegistro}
-                style={{ backgroundColor: colorRow }}
-              >
-                <td>{registro.day}</td>
-                <td>
-                  <div>
+          {/* prettier-ignore */}
+          {registros
+            .sort((a, b) => {
+              return a.day - b.day;
+            })
+            .map((registro) => {
+              const colorRow = registro.type === "+" ? "#65B051" : "salmon";
+              return (
+                <tr
+                  key={registro._id}
+                  className={css.trRegistro}
+                  style={{ backgroundColor: colorRow }}
+                >
+                  <td>{registro.day}</td>
+                  <td>
                     <div>
-                      <strong>{registro.category}</strong>
+                      <div>
+                        <strong>{registro.category}</strong>
+                      </div>
+                      <div>
+                        <span>{registro.description}</span>
+                      </div>
                     </div>
-                    <div>
-                      <span>{registro.description}</span>
-                    </div>
-                  </div>
-                </td>
-                <td>{formatReal(registro.value)}</td>
-                <td>
-                  <Action
-                    registro={registro}
-                    type="edit"
-                    onActionClick={handleActionClick}
-                  />
-                  <Action
-                    registro={registro}
-                    type="delete_forever"
-                    onActionClick={handleActionClick}
-                  />
-                </td>
-              </tr>
-            );
-          })}
+                  </td>
+                  <td>{formatReal(registro.value)}</td>
+                  <td>
+                    <Action
+                      registro={registro}
+                      type="edit"
+                      onActionClick={handleActionClick}
+                    />
+                    <Action
+                      registro={registro}
+                      type="delete_forever"
+                      onActionClick={handleActionClick}
+                    />
+                  </td>
+                </tr>
+              );
+            })}
         </tbody>
       </table>
     </div>

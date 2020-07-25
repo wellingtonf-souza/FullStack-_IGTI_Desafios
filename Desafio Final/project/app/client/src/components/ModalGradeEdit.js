@@ -31,7 +31,7 @@ export default function ModalGradeEdit({ onClose, onSave, Registro }) {
   };
 
   const handleValue = (event) => {
-    setValue(Number(event.target.value));
+    setValue(Number(event.target.value.replace(",", ".")));
   };
 
   const handleCategory = (event) => {
@@ -132,7 +132,7 @@ export default function ModalGradeEdit({ onClose, onSave, Registro }) {
             </div>
             <div>
               <label>value</label>
-              <input type="text" onChange={handleValue} value={value} />
+              <input type="text" onChange={handleValue} defaultValue={value} />
             </div>
             <div>
               <input type="date" onChange={handleDate} value={yearMonthDay} />

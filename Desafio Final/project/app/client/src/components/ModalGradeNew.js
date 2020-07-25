@@ -31,7 +31,7 @@ export default function ModalGradeNew({ onClose, onSave }) {
   };
 
   const handleValue = (event) => {
-    setValue(Number(event.target.value));
+    setValue(Number(event.target.value.replace(",", ".")));
   };
 
   const handleCategory = (event) => {
